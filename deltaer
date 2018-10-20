@@ -1,0 +1,5 @@
+#!/bin/bash
+if [ "`grep "RMM:  39" OSZICAR`"  ] ; then echo BAD ; exit ; else  echo fine ; fi
+grep '  without entropy' OUTCAR | tail -n 1 | awk '{print $7}'
+grep '  without entropy' OUTCAR | head -n 1 | awk '{print $7}'
+echo "scale=5;$(grep '  without entropy' OUTCAR | tail -n 1 | awk '{print $7}') - $(grep '  without entropy' OUTCAR | head -n 1 | awk '{print $7}')" | bc
