@@ -1,0 +1,2 @@
+#!/bin/bash
+python -c 'import re;print re.findall(r"(E-fermi.*?)------------------------",open("OUTCAR").read(),re.S)[-1].rstrip() '

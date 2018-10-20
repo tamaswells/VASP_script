@@ -1,0 +1,2 @@
+#!/bin/bash
+grep '  without entropy' OUTCAR | tail -n 1 

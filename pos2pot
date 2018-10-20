@@ -1,0 +1,3 @@
+#!/bin/bash
+bash /data1/vaspscript/POTCAR.sh $(sed -n 6p POSCAR | tr -d "\r")
+echo "Finished"
