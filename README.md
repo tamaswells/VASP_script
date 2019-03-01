@@ -18,7 +18,8 @@ NEB插点后，将各个文件夹中的POSCAR.xyz组合成total.xyz，可以用V
 生成普通的K点，  bash kpoint G 4 4 4  等，推荐用vaspkit
 
 7.merge_band.py
-因为p4vasp 导出的能带和dos的 dat文件没有分开，没法用Origin直接绘图， python merge_band.py 可以重新将dat文件转化为 Origin可以直接绘图的dat文件。
+~~因为p4vasp 导出的能带和dos的 dat文件没有分开，没法用Origin直接绘图， python merge_band.py 可以重新将dat文件转化为 Origin可以直接绘图的dat文件。~~
+vaspkit0.72版开始已经支持了导入格式兼容ORIGIN的dat文件，同时可以直接调用Python绘制DOS图，能带图。不再建议使用该辅助脚本。
 
 8. OUTCAR2jmol.sh
 针对JMOL可视化OUTCAR的频率振动时无法认识原子的问题。 bash OUTCAR2jmol.sh
@@ -39,7 +40,8 @@ NEB插点后，将各个文件夹中的POSCAR.xyz组合成total.xyz，可以用V
 可以自动判断sigma的取值是否合适。SIGMA 的取值要保证OUTCAR 中的 entropy T*S 这一项,平均到每个原子上,要小于 1-2 meV   bash sigma
 
 14. Auxiliary Tool for the VASPKIT.rar
-类似7， 将 vaspkit的输出文件转成 Origin的格式，同时另外的工具可以找出能带图中高对称点在能带图中的 x坐标。
+~~类似7， 将 vaspkit的输出文件转成 Origin的格式，同时另外的工具可以找出能带图中高对称点在能带图中的 x坐标。~~
+vaspkit0.72版开始已经支持了导入格式兼容ORIGIN的dat文件，同时可以直接调用Python绘制DOS图，能带图。不再建议使用该辅助脚本。
 
 15. cif2pos.py
 支持将含有对称性信息的CIF文件转化成POSCAR。
