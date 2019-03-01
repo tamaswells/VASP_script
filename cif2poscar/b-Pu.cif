@@ -1,0 +1,70 @@
+#(C) 2010 by Fachinformationszentrum Karlsruhe. All rights reserved.
+data_649890-ICSD
+_database_code_ICSD 649890
+_audit_creation_date 2008-08-01
+_chemical_name_systematic Plutonium
+_chemical_formula_structural Pu
+_chemical_formula_sum Pu1
+_exptl_crystal_density_diffrn 18.28
+_cell_measurement_temperature 293.
+#Default value included by FIZ Karlsruhe
+_cell_measurement_pressure 101.325
+#Default value included by FIZ Karlsruhe
+_publ_section_title 'The crystal structure of beta plutonium metal'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Acta Crystallographica (1,1948-23,1967)' 1963 16 369 369 ACCRA9
+loop_
+_publ_author_name
+'Zachariasen, W.H.'
+'Ellinger, F.H.'
+_cell_length_a 9.227
+_cell_length_b 10.449
+_cell_length_c 7.824
+_cell_angle_alpha 90.
+_cell_angle_beta 92.54
+_cell_angle_gamma 90.
+_cell_volume 753.59
+_cell_formula_units_Z 34
+_symmetry_space_group_name_H-M 'I 1 2/m 1'
+_symmetry_Int_Tables_number 12
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x, -y, z'
+2 '-x, -y, -z'
+3 '-x, y, -z'
+4 'x, y, z'
+5 'x+1/2, -y+1/2, z+1/2'
+6 '-x+1/2, -y+1/2, -z+1/2'
+7 '-x+1/2, y+1/2, -z+1/2'
+8 'x+1/2, y+1/2, z+1/2'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Pu0+ 0
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Pu1 Pu0+ 2 a 0 0 0 . 1. 0
+Pu2 Pu0+ 4 i 0.146 0 0.387 . 1. 0
+Pu3 Pu0+ 4 i 0.337 0 0.082 . 1. 0
+Pu4 Pu0+ 4 i 0.434 0 0.672 . 1. 0
+Pu5 Pu0+ 4 h 0.5 0.22 0 . 1. 0
+Pu6 Pu0+ 8 j 0.145 0.268 0.108 . 1. 0
+Pu7 Pu0+ 8 j 0.167 0.15 0.753 . 1. 0
+#End of data_649890-ICSD

@@ -1,0 +1,156 @@
+#------------------------------------------------------------------------------
+#$Date: 2010-07-19 14:02:56 +0000 (Mon, 19 Jul 2010) $
+#$Revision: 1230 $
+#$URL: svn://cod.ibt.lt/cod/cif/2/2100862.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/. The original data for this entry
+# were provided by IUCr Journals, http://journals.iucr.org/.
+#
+# The file may be used within the scientific community so long as
+# proper attribution is given to the journal article from which the
+# data were obtained.
+#
+data_2100862
+loop_
+_publ_author_name
+'Buttner, R. H.'
+'Maslen, E. N.'
+_publ_section_title
+;
+ Structural parameters and electron difference density in BaTiO~3~
+;
+_journal_issue                   6
+_journal_name_full               'Acta Crystallographica Section B'
+_journal_page_first              764
+_journal_page_last               769
+_journal_volume                  48
+_journal_year                    1992
+_chemical_compound_source
+'synthetic, from a mixture of KF:KMoO4:BaTiO3'
+_chemical_formula_sum            'Ba O3 Ti'
+_chemical_formula_weight         233.24
+_symmetry_cell_setting           cubic
+_symmetry_space_group_name_Hall  '-P 4 2 3'
+_symmetry_space_group_name_H-M   'P m -3 m'
+_cell_angle_alpha                90.0
+_cell_angle_beta                 90.0
+_cell_angle_gamma                90.0
+_cell_formula_units_Z            1
+_cell_length_a                   4.006(2)
+_cell_length_b                   4.006(2)
+_cell_length_c                   4.006(2)
+_cell_volume                     64.29(6)
+_computing_structure_solution
+;
+ Computer programs STARTX, DIFDAT, ABSORB, ADDATM, ADDREF, FC, CRYLSQ,
+ BONDLA, FOURR, CHARGE, CONTRS, SLANT and PLOT from the XTAL2.6 system
+ (Hall & Stewart, 1989), installed on a SUN 280 computer, were used.
+;
+_diffrn_measurement_device_type  'Syntex P21 diffractometer'
+_diffrn_radiation_monochromator  graphite
+_diffrn_radiation_type           Mo
+_diffrn_radiation_wavelength     0.71069
+_diffrn_reflns_limit_h_max       8
+_diffrn_reflns_limit_h_min       -8
+_diffrn_reflns_limit_k_max       8
+_diffrn_reflns_limit_k_min       -8
+_diffrn_reflns_limit_l_max       8
+_diffrn_reflns_limit_l_min       -8
+_diffrn_reflns_theta_max         50.0
+_diffrn_standards_decay_%        0.6(2)
+_diffrn_standards_interval_count 100
+_exptl_absorpt_coefficient_mu    18.60
+_exptl_crystal_density_diffrn    6.024
+_exptl_crystal_F_000             102
+_exptl_crystal_preparation
+;
+ A mixture of KF:KMoO4:BaTiO3 in the molar ratio 60:30:10 was heated
+ to 1323K and cooled by approximately 15 K h -1.
+;
+_exptl_crystal_thermal_history
+'heated to 1323K and cooled by approximately 15 K h -1'
+_refine_ls_R_factor_all          0.012
+_refine_ls_weighting_details     w=1/[\s^2^(Fo^2^)]
+_refine_ls_weighting_scheme      calc
+_refine_ls_wR_factor_all         0.013
+_[local]_cod_data_source_file    as0598.cif
+_[local]_cod_data_source_block   as0598e
+_[local]_cod_cif_authors_sg_H-M  'P m-3m'
+_[local]_cod_chemical_formula_sum_orig 'Ba1 O3 Ti1'
+_cod_depositor_comments
+;
+
+ The optimal structure CIF was identified and additional refinement
+ parameters not present in the original as0598.cif file were added
+ after consulting the text of the publication (R.H.Buttner &
+ E.N.Maslen (1992) Acta Cryst. B pp. 764-769).
+
+ The location of the FOBS data was specified in a footnote on the page
+ 765 of the original paper as follows:
+
+ "Lists of structure factors and the correlation matrix for the
+  non-centrosymmetric refinement of data set (1) have been deposited
+  with the British Library Document Supply Centre as Supplementary
+  Publication No. SUP 55254 (4 pp.). Copies may be obtained through
+  The Technical Editor, International Union of Crystallography, 5
+  Abbey Square, Chester CH1 2HU, England. [CIF reference: AS0598]"
+
+ Unit cell constants for the cubic model (data blocks as0598e and
+ as0598f) is taken from the R.H.Buttner & E.N.Maslen (1992) Acta
+ Cryst. B p. 765:
+
+ "The equivalent cubic cell dimension was set at 4.006 (2)\%A"
+
+ The original CIF's _audit_creation_method value lists "as0598e is Model
+ 1-Set 1 & as0598f is Model1-Set 1"; thus, the same "Model 1-Set 1" is
+ assigned to both datablocks as0598e and as0598f. The data in two data
+ blocks as0598e and as0598f appear to be identical. There might be therefore
+ a mistake in the provided model numbers, or a wrong data block might be
+ inserted into the original as0598.cif file. But the blocks are for control
+ anyway, so the solved structure not affected even if this was a mistake.
+
+ In addition, atomic coordinates fiven for the cubic models (as0598e
+ and as0598f) in the CIF file are different from thos provided in the
+ table 2 of the publication. Again, the cubic models are only for
+ illustration of a suboptimal structure, so this is not a big problem
+ IMHO.
+
+ Anisotropic temperature factors (Uij) and atomic charges determined
+ by Hirshfeld (1977) methods are given as tables in the paper text. I
+ did not have enough determination to key them in... ;)
+
+ Saulius Gra\<zulis
+ 2010.07.19
+;
+_cod_original_cell_volume        64.281
+_cod_suboptimal_structure        yes
+_cod_related_optimal_struct      2100858
+_cod_database_code               2100862
+loop_
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_U_iso_or_equiv
+Ba 0.5 0.5 0.5 ?
+Ti 0.0 0.0 0.0 ?
+O 0.5 0.0 0.0 ?
+loop_
+_diffrn_refln_index_h
+_diffrn_refln_index_k
+_diffrn_refln_index_l
+_diffrn_refln_scan_mode
+_diffrn_refln_scan_rate
+. . . ot 4.88
+loop_
+_diffrn_standard_refln_index_h
+_diffrn_standard_refln_index_k
+_diffrn_standard_refln_index_l
+4 0 0
+-4 0 0
+0 3 0
+0 -3 0
+0 0 4
+0 0 -4

@@ -1,0 +1,258 @@
+#(C) 2010 by Fachinformationszentrum Karlsruhe. All rights reserved.
+data_51688-ICSD
+_database_code_ICSD 51688
+_audit_creation_date 2003-10-01
+_audit_update_record 2006-10-01
+_chemical_name_systematic Silicon
+_chemical_formula_structural Si
+_chemical_formula_sum Si1
+_chemical_name_structure_type C(cF8)
+_exptl_crystal_density_diffrn 2.33
+_cell_measurement_temperature 293.
+#Default value included by FIZ Karlsruhe
+_cell_measurement_pressure 101.325
+#Default value included by FIZ Karlsruhe
+_publ_section_title
+
+;
+E9: The new high-resolution neutron powder diffractometer at the Berlin
+neutron scattering center
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Materials Science Forum' 2001 378 288 293 MSFOEP
+loop_
+_publ_author_name
+'Toebbens, D.M.'
+'Stuesser, N.'
+'Knorr, K.'
+'Mayer, H.M.'
+'Lampert, G.'
+_cell_length_a 5.43053(7)
+_cell_length_b 5.43053(7)
+_cell_length_c 5.43053(7)
+_cell_angle_alpha 90
+_cell_angle_beta 90
+_cell_angle_gamma 90
+_cell_volume 160.15
+_cell_formula_units_Z 8
+_symmetry_space_group_name_H-M 'F d -3 m S'
+_symmetry_Int_Tables_number 227
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'z+1/4, y+1/4, -x+1/4'
+2 'y+1/4, x+1/4, -z+1/4'
+3 'x+1/4, z+1/4, -y+1/4'
+4 'z+1/4, x+1/4, -y+1/4'
+5 'y+1/4, z+1/4, -x+1/4'
+6 'x+1/4, y+1/4, -z+1/4'
+7 'z+1/4, -y+1/4, x+1/4'
+8 'y+1/4, -x+1/4, z+1/4'
+9 'x+1/4, -z+1/4, y+1/4'
+10 'z+1/4, -x+1/4, y+1/4'
+11 'y+1/4, -z+1/4, x+1/4'
+12 'x+1/4, -y+1/4, z+1/4'
+13 '-z+1/4, y+1/4, x+1/4'
+14 '-y+1/4, x+1/4, z+1/4'
+15 '-x+1/4, z+1/4, y+1/4'
+16 '-z+1/4, x+1/4, y+1/4'
+17 '-y+1/4, z+1/4, x+1/4'
+18 '-x+1/4, y+1/4, z+1/4'
+19 '-z+1/4, -y+1/4, -x+1/4'
+20 '-y+1/4, -x+1/4, -z+1/4'
+21 '-x+1/4, -z+1/4, -y+1/4'
+22 '-z+1/4, -x+1/4, -y+1/4'
+23 '-y+1/4, -z+1/4, -x+1/4'
+24 '-x+1/4, -y+1/4, -z+1/4'
+25 '-z, -y, x'
+26 '-y, -x, z'
+27 '-x, -z, y'
+28 '-z, -x, y'
+29 '-y, -z, x'
+30 '-x, -y, z'
+31 '-z, y, -x'
+32 '-y, x, -z'
+33 '-x, z, -y'
+34 '-z, x, -y'
+35 '-y, z, -x'
+36 '-x, y, -z'
+37 'z, -y, -x'
+38 'y, -x, -z'
+39 'x, -z, -y'
+40 'z, -x, -y'
+41 'y, -z, -x'
+42 'x, -y, -z'
+43 'z, y, x'
+44 'y, x, z'
+45 'x, z, y'
+46 'z, x, y'
+47 'y, z, x'
+48 'x, y, z'
+49 'z+1/4, y+3/4, -x+3/4'
+50 'y+1/4, x+3/4, -z+3/4'
+51 'x+1/4, z+3/4, -y+3/4'
+52 'z+1/4, x+3/4, -y+3/4'
+53 'y+1/4, z+3/4, -x+3/4'
+54 'x+1/4, y+3/4, -z+3/4'
+55 'z+1/4, -y+3/4, x+3/4'
+56 'y+1/4, -x+3/4, z+3/4'
+57 'x+1/4, -z+3/4, y+3/4'
+58 'z+1/4, -x+3/4, y+3/4'
+59 'y+1/4, -z+3/4, x+3/4'
+60 'x+1/4, -y+3/4, z+3/4'
+61 '-z+1/4, y+3/4, x+3/4'
+62 '-y+1/4, x+3/4, z+3/4'
+63 '-x+1/4, z+3/4, y+3/4'
+64 '-z+1/4, x+3/4, y+3/4'
+65 '-y+1/4, z+3/4, x+3/4'
+66 '-x+1/4, y+3/4, z+3/4'
+67 '-z+1/4, -y+3/4, -x+3/4'
+68 '-y+1/4, -x+3/4, -z+3/4'
+69 '-x+1/4, -z+3/4, -y+3/4'
+70 '-z+1/4, -x+3/4, -y+3/4'
+71 '-y+1/4, -z+3/4, -x+3/4'
+72 '-x+1/4, -y+3/4, -z+3/4'
+73 '-z, -y+1/2, x+1/2'
+74 '-y, -x+1/2, z+1/2'
+75 '-x, -z+1/2, y+1/2'
+76 '-z, -x+1/2, y+1/2'
+77 '-y, -z+1/2, x+1/2'
+78 '-x, -y+1/2, z+1/2'
+79 '-z, y+1/2, -x+1/2'
+80 '-y, x+1/2, -z+1/2'
+81 '-x, z+1/2, -y+1/2'
+82 '-z, x+1/2, -y+1/2'
+83 '-y, z+1/2, -x+1/2'
+84 '-x, y+1/2, -z+1/2'
+85 'z, -y+1/2, -x+1/2'
+86 'y, -x+1/2, -z+1/2'
+87 'x, -z+1/2, -y+1/2'
+88 'z, -x+1/2, -y+1/2'
+89 'y, -z+1/2, -x+1/2'
+90 'x, -y+1/2, -z+1/2'
+91 'z, y+1/2, x+1/2'
+92 'y, x+1/2, z+1/2'
+93 'x, z+1/2, y+1/2'
+94 'z, x+1/2, y+1/2'
+95 'y, z+1/2, x+1/2'
+96 'x, y+1/2, z+1/2'
+97 'z+3/4, y+1/4, -x+3/4'
+98 'y+3/4, x+1/4, -z+3/4'
+99 'x+3/4, z+1/4, -y+3/4'
+100 'z+3/4, x+1/4, -y+3/4'
+101 'y+3/4, z+1/4, -x+3/4'
+102 'x+3/4, y+1/4, -z+3/4'
+103 'z+3/4, -y+1/4, x+3/4'
+104 'y+3/4, -x+1/4, z+3/4'
+105 'x+3/4, -z+1/4, y+3/4'
+106 'z+3/4, -x+1/4, y+3/4'
+107 'y+3/4, -z+1/4, x+3/4'
+108 'x+3/4, -y+1/4, z+3/4'
+109 '-z+3/4, y+1/4, x+3/4'
+110 '-y+3/4, x+1/4, z+3/4'
+111 '-x+3/4, z+1/4, y+3/4'
+112 '-z+3/4, x+1/4, y+3/4'
+113 '-y+3/4, z+1/4, x+3/4'
+114 '-x+3/4, y+1/4, z+3/4'
+115 '-z+3/4, -y+1/4, -x+3/4'
+116 '-y+3/4, -x+1/4, -z+3/4'
+117 '-x+3/4, -z+1/4, -y+3/4'
+118 '-z+3/4, -x+1/4, -y+3/4'
+119 '-y+3/4, -z+1/4, -x+3/4'
+120 '-x+3/4, -y+1/4, -z+3/4'
+121 '-z+1/2, -y, x+1/2'
+122 '-y+1/2, -x, z+1/2'
+123 '-x+1/2, -z, y+1/2'
+124 '-z+1/2, -x, y+1/2'
+125 '-y+1/2, -z, x+1/2'
+126 '-x+1/2, -y, z+1/2'
+127 '-z+1/2, y, -x+1/2'
+128 '-y+1/2, x, -z+1/2'
+129 '-x+1/2, z, -y+1/2'
+130 '-z+1/2, x, -y+1/2'
+131 '-y+1/2, z, -x+1/2'
+132 '-x+1/2, y, -z+1/2'
+133 'z+1/2, -y, -x+1/2'
+134 'y+1/2, -x, -z+1/2'
+135 'x+1/2, -z, -y+1/2'
+136 'z+1/2, -x, -y+1/2'
+137 'y+1/2, -z, -x+1/2'
+138 'x+1/2, -y, -z+1/2'
+139 'z+1/2, y, x+1/2'
+140 'y+1/2, x, z+1/2'
+141 'x+1/2, z, y+1/2'
+142 'z+1/2, x, y+1/2'
+143 'y+1/2, z, x+1/2'
+144 'x+1/2, y, z+1/2'
+145 'z+3/4, y+3/4, -x+1/4'
+146 'y+3/4, x+3/4, -z+1/4'
+147 'x+3/4, z+3/4, -y+1/4'
+148 'z+3/4, x+3/4, -y+1/4'
+149 'y+3/4, z+3/4, -x+1/4'
+150 'x+3/4, y+3/4, -z+1/4'
+151 'z+3/4, -y+3/4, x+1/4'
+152 'y+3/4, -x+3/4, z+1/4'
+153 'x+3/4, -z+3/4, y+1/4'
+154 'z+3/4, -x+3/4, y+1/4'
+155 'y+3/4, -z+3/4, x+1/4'
+156 'x+3/4, -y+3/4, z+1/4'
+157 '-z+3/4, y+3/4, x+1/4'
+158 '-y+3/4, x+3/4, z+1/4'
+159 '-x+3/4, z+3/4, y+1/4'
+160 '-z+3/4, x+3/4, y+1/4'
+161 '-y+3/4, z+3/4, x+1/4'
+162 '-x+3/4, y+3/4, z+1/4'
+163 '-z+3/4, -y+3/4, -x+1/4'
+164 '-y+3/4, -x+3/4, -z+1/4'
+165 '-x+3/4, -z+3/4, -y+1/4'
+166 '-z+3/4, -x+3/4, -y+1/4'
+167 '-y+3/4, -z+3/4, -x+1/4'
+168 '-x+3/4, -y+3/4, -z+1/4'
+169 '-z+1/2, -y+1/2, x'
+170 '-y+1/2, -x+1/2, z'
+171 '-x+1/2, -z+1/2, y'
+172 '-z+1/2, -x+1/2, y'
+173 '-y+1/2, -z+1/2, x'
+174 '-x+1/2, -y+1/2, z'
+175 '-z+1/2, y+1/2, -x'
+176 '-y+1/2, x+1/2, -z'
+177 '-x+1/2, z+1/2, -y'
+178 '-z+1/2, x+1/2, -y'
+179 '-y+1/2, z+1/2, -x'
+180 '-x+1/2, y+1/2, -z'
+181 'z+1/2, -y+1/2, -x'
+182 'y+1/2, -x+1/2, -z'
+183 'x+1/2, -z+1/2, -y'
+184 'z+1/2, -x+1/2, -y'
+185 'y+1/2, -z+1/2, -x'
+186 'x+1/2, -y+1/2, -z'
+187 'z+1/2, y+1/2, x'
+188 'y+1/2, x+1/2, z'
+189 'x+1/2, z+1/2, y'
+190 'z+1/2, x+1/2, y'
+191 'y+1/2, z+1/2, x'
+192 'x+1/2, y+1/2, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Si0+ 0
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Si1 Si0+ 8 a 0. 0. 0. 0.54(1) 1. 0
+#End of data_51688-ICSD

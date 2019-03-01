@@ -1,0 +1,76 @@
+#------------------------------------------------------------------------------
+#$Date: 2010-06-10 15:11:07 +0000 (Thu, 10 Jun 2010) $
+#$Revision: 1210 $
+#$URL: svn://cod.ibt.lt/cod/cif/9/9007668.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/. The original data for this entry
+# were provided the American Mineralogist Crystal Structure Database,
+# http://rruff.geo.arizona.edu/AMS/amcsd.php
+#
+# The file may be used within the scientific community so long as
+# proper attribution is given to the journal article from which the
+# data were obtained.
+#
+data_9007668
+loop_
+_publ_author_name
+'Lyman, P. S.'
+'Prewitt, C. T.'
+_publ_section_title
+;
+ Room- and high-pressure crystal chemistry of CoAs and FeAs
+ Locality: synthetic
+ Note: anisoB's taken from ICSD
+ Sample: Pnam refinement, P = .0001 GPa
+;
+_journal_name_full               'Acta Crystallographica, Section B'
+_journal_page_first              14
+_journal_page_last               20
+_journal_volume                  40
+_journal_year                    1984
+_chemical_formula_sum            'As Fe'
+_chemical_name_mineral           Westerveldite
+_space_group_IT_number           62
+_symmetry_space_group_name_Hall  '-P 2c 2n'
+_symmetry_space_group_name_H-M   'P n a m'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                90
+_cell_length_a                   5.4401
+_cell_length_b                   6.0259
+_cell_length_c                   3.3712
+_cell_volume                     110.513
+_diffrn_ambient_pressure         100
+_exptl_crystal_density_diffrn    7.860
+_[local]_cod_chemical_formula_sum_orig 'Fe As'
+_cod_database_code               9007668
+_amcsd_database_code             AMCSD#0009602
+loop_
+_symmetry_equiv_pos_as_xyz
+x,y,z
+x,y,1/2-z
+-x,-y,1/2+z
+1/2-x,1/2+y,1/2+z
+1/2+x,1/2-y,1/2-z
+1/2+x,1/2-y,z
+1/2-x,1/2+y,-z
+-x,-y,-z
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Fe 0.00465 0.00570 0.01059 0.00010 0.00000 0.00000
+As 0.00525 0.00589 0.00662 0.00042 0.00000 0.00000
+loop_
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+Fe 0.00330 0.19930 0.25000
+As 0.19920 0.57730 0.25000
