@@ -40,3 +40,6 @@ NEB插点后，将各个文件夹中的POSCAR.xyz组合成total.xyz，可以用V
 
 14. Auxiliary Tool for the VASPKIT.rar
 类似7， 将 vaspkit的输出文件转成 Origin的格式，同时另外的工具可以找出能带图中高对称点在能带图中的 x坐标。
+
+15. cif2pos.py
+支持将含有对称性信息的CIF文件转化成POSCAR。
