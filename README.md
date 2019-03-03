@@ -45,4 +45,13 @@ vaspkit0.72版开始已经支持了导入格式兼容ORIGIN的dat文件，同时
 vaspkit0.72版开始已经支持了导入格式兼容ORIGIN的dat文件，同时可以直接调用Python绘制DOS图，能带图。不再建议使用该辅助脚本。
 
 15. cif2pos.py
-支持将含有对称性信息的CIF文件转化成POSCAR。
+将含有对称性信息的CIF文件转化成POSCAR。
+
+16. xsd2pos.py
+将含有fractional位置限制信息的xsd文件转成POSCAR。
+
+17.XDATCAR_manipulation.py
+读取vasp第一性原理动力学轨迹XDATCAR并提取能量，温度曲线，预留了接口输出每一帧的坐标
+
+18.POSCAR_manipulation.py
+读取和写出POSCAR的Python类封装。
