@@ -1,0 +1,13 @@
+ PREC = Normal    ! standard precision 
+ ENMAX = 400      ! cutoff should be set manually
+ ISMEAR = 0 ; SIGMA = 0.1
+
+ ISYM = 0         ! strongly recommened for MD
+ IBRION = 0       ! molecular dynamics
+ NSW = 1000       ! 1000 steps
+ POTIM = 0.5      ! timestep 0.5 fs
+
+ SMASS = -3       ! Nose Hoover thermostat
+ TEBEG =  2000 ; TEEND = 2000 ! temperature
+
+ NBANDS = 8

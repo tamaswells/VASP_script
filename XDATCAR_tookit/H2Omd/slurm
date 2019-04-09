@@ -1,0 +1,7 @@
+#!/bin/bash
+
+module load mpi/intel/18.0.2
+
+cd $SLURM_SUBMIT_DIR
+srun -n 40 /public1/home/pg2059/opt/VASP/vasp.5.4.4-optcell-vtst/bin/vasp_std > LOG
+
