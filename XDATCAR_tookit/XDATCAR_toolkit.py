@@ -15,6 +15,7 @@ mpl.use('Agg') #silent mode
 from matplotlib import pyplot as plt
 from optparse import OptionParser  
 import sys
+from copy import deepcopy
 
 class debug(object):
     def __init__(self,info='debug'):
@@ -63,6 +64,7 @@ class XDATCAR(Energy_Temp):
         self._lattice1=0.0
         self._lattice2=0.0
         self._lattice3=0.0
+        self._lattice=np.zeros(3)
         self.format_trans=False
 
         @property 
@@ -130,6 +132,9 @@ class XDATCAR(Energy_Temp):
         self._lattice1=np.sqrt(np.sum(np.square(self.lattice[0])))
         self._lattice2=np.sqrt(np.sum(np.square(self.lattice[1])))
         self._lattice3=np.sqrt(np.sum(np.square(self.lattice[2])))
+        self._lattice[0]=self._lattice1
+        self._lattice[1]=self._lattice2
+        self._lattice[2]=self._lattice3
         self.alpha=math.acos(np.dot(self.lattice[1],self.lattice[2]) \
             /float((self._lattice2*self._lattice3)))/np.pi*180.0
         self.beta=math.acos(np.dot(self.lattice[0],self.lattice[2]) \
@@ -167,7 +172,7 @@ class XDATCAR(Energy_Temp):
             self.atomic_position[i]=np.array([float(j) for j in line_tmp.split()[0:3]])         
         self.cartesian_position=np.dot(self.atomic_position,self.lattice)
         self.current_frame+=1
-        if self.format_trans == True: self.writepdb()
+        #
         #self.cartesian_position*=self.scaling_factor
         return self.cartesian_position
 
@@ -188,7 +193,32 @@ class XDATCAR(Energy_Temp):
             tobewriten=[i+'\n' for i in tobewriten]
             pdbwriter.writelines(tobewriten)
 
+    def unswrapPBC(self,prev_atomic_cartesian):
+        diff= self.cartesian_position-prev_atomic_cartesian
+        prev_atomic_cartesian=deepcopy(self.cartesian_position) 
+        xx=np.where(diff[:,0]>(self._lattice1/2),diff[:,0]-self._lattice1\
+            ,np.where(diff[:,0]<-(self._lattice1/2),diff[:,0]+self._lattice1\
+                ,diff[:,0]))
+        yy=np.where(diff[:,1]>(self._lattice2/2),diff[:,1]-self._lattice2\
+            ,np.where(diff[:,1]<-(self._lattice2/2),diff[:,1]+self._lattice2\
+                ,diff[:,1]))
+        zz=np.where(diff[:,2]>(self._lattice3/2),diff[:,2]-self._lattice3\
+            ,np.where(diff[:,2]<-(self._lattice3/2),diff[:,2]+self._lattice3\
+                ,diff[:,2]))
+        xx=xx.reshape(-1,1);yy=yy.reshape(-1,1);zz=zz.reshape(-1,1)
+        return (prev_atomic_cartesian,np.concatenate([xx,yy,zz],axis=1))
 
+    def reset_cartesian(self,real_atomic_cartesian,center_atom):
+        if center_atom > len(real_atomic_cartesian)-1:
+            raise SystemError("Selected atom does not exist!")
+        for i in range(0,len(real_atomic_cartesian)):
+            for j in range(3):
+                if (real_atomic_cartesian[i][j]-real_atomic_cartesian[center_atom][j])>self._lattice[j]/2:
+                    real_atomic_cartesian[i][j]-=self._lattice[j]
+                if (real_atomic_cartesian[i][j]-real_atomic_cartesian[center_atom][j])<-self._lattice[j]/2:
+                    real_atomic_cartesian[i][j]+=self._lattice[j]                
+        return real_atomic_cartesian
+                    
     def __call__(self,selected_step):
         self.step_select(selected_step)
     def __str__(self):
@@ -202,7 +232,7 @@ class plot(object):
         self.time_range=(self.XDATCAR_inst.lowrange,self.XDATCAR_inst.uprange+1)
         self.lwd=lwd;self.font=font;self.dpi=dpi;self.figsize=figsize
 
-    @debug(info='debug')
+    #@debug(info='debug')
     def plotfigure(self,title='MD temperature and energy profile'):
         from matplotlib import pyplot as plt
         self.newtemp=self.XDATCAR_inst.temp;self.newenergy=self.XDATCAR_inst.energy
@@ -257,6 +287,14 @@ if __name__ == "__main__":
                       action="store_true", dest="format_trans", default=False,  
                       help="choose whether to convert XDATCAR to PDB!") 
 
+    parser.add_option("--pbc",  
+                      action="store_true", dest="periodic", default=False,  
+                      help="choose whether to swrap PBC images!") 
+
+    parser.add_option("-i", "--index", 
+                      dest="index", default=-1,  
+                      help="choose which atom to center whole molecule!") 
+
     (options,args) = parser.parse_args()
     XDATCAR_inst=XDATCAR()
     XDATCAR_iter=iter(XDATCAR_inst)
@@ -275,6 +313,19 @@ if __name__ == "__main__":
     for i in range(XDATCAR_inst.uprange+1): 
         if (i>=XDATCAR_inst.lowrange):
             cartesian_position=XDATCAR_iter.next()
+            if options.format_trans == True: 
+                if options.periodic == True: 
+                    if i == XDATCAR_inst.lowrange:
+                        real_atomic_cartesian=deepcopy(cartesian_position)
+                        if int(options.index) != -1:
+                            real_atomic_cartesian=XDATCAR_inst.reset_cartesian(real_atomic_cartesian,int(options.index)-1)
+                        XDATCAR_inst.cartesian_position=real_atomic_cartesian
+                        prev_atomic_cartesian=deepcopy(cartesian_position)
+                    else:
+                        prev_atomic_cartesian,diffs=XDATCAR_inst.unswrapPBC(prev_atomic_cartesian)
+                        real_atomic_cartesian+=diffs
+                        XDATCAR_inst.cartesian_position=real_atomic_cartesian              
+                XDATCAR_inst.writepdb()
         else:
             XDATCAR_iter.skiplines_()
 
