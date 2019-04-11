@@ -55,3 +55,9 @@ vaspkit0.72版开始已经支持了导入格式兼容ORIGIN的dat文件，同时
 
 18.POSCAR_manipulation.py
 读取和写出POSCAR的Python类封装。
+
+19.半衰期.py
+根据能垒计算一级反应的反应速率和反应半衰期
+
+20.mp2incar.py
+将Materials Project上的INCAR输入参数整合成规范的格式。
