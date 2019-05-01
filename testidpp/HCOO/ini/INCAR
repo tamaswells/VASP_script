@@ -1,0 +1,66 @@
+SYSTEM = Pt(111)
+
+####################################
+#       Plane wave basis set       #
+####################################
+
+PREC             =       N
+ENCUT            =       400
+LREAL            =       Auto
+
+###################################
+#        Spin polarization        #
+###################################
+
+#ISPIND          =       2               #makes spin-polarized calc. possible
+#ISPIN           =       2               # 1 (withou spin) | 2 (with spin)
+#MAGMOM          =       64*0   5*1      #initial mag. mom. of each atom.
+#SAXIS           =       0 0 1 # direction of the magnetic axis
+
+#######################################
+#        Self-Consistent Field        #
+#######################################
+
+#GGA             =       PE
+ALGO             =       Fast          # Normal | Fast | VeryFast
+EDIFF            =       1E-6            #total (free) energy diference between two steps for convengence
+NELM             =       100             #Maximum number of electronic steps
+#NPAR             =       3                # Parallelization
+NCORE            =       4
+#ISYM             =       0
+
+########################################
+#        Electronic temperature        #
+########################################
+
+ISMEAR           =       1              # -1 (Fermi) | 0 (Gaussian) | 1 (Methfessel-Paxton)
+SIGMA            =       0.1            # Smearing width in eV (keep TS<1meV/atom)
+
+####################################
+#        Molecular dynamics        #
+####################################
+
+EDIFFG           =       -3.0E-2         # for negative values, is the value of convenge in force
+NSW              =       500             # numberof ionic steps taken in minimization. Make it odd.
+IBRION           =       2               # -1 (fixed ions) | 0 (AIMD) | 1 (quasi-newton) | 2 (CG)
+POTIM            =       0.1
+#ISIF             =       3               # 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
+
+#########################################
+#        Optional loadable & OUTPUT files        #
+#########################################
+
+NWRITE           =       0 
+LWAVE            =       .FALSE.
+LCHARG           =       .FALSE.
+
+#########################################
+#       vDw and Dipole Moment Correction         #
+#########################################
+
+LDIPOL           =       .TRUE.           # for slab   IMPORTANT
+IDIPOL           =       3 
+
+IVDW             =       11
+VDW_RADIUS=50.2
+VDW_CNRADIUS=20.0

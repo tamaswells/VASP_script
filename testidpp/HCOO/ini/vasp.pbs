@@ -1,0 +1,13 @@
+#/bin/bash
+#PBS -N vasp
+#PBS -l nodes=node4:ppn=16
+#PBS -j oe
+#PBS -l walltime=1000:0:0
+
+nprocs=`cat $PBS_NODEFILE | wc -l`
+source /public/software/profile.d/vasp.sh
+cd $PBS_O_WORKDIR 
+mpirun -np $nprocs -machinefile $PBS_NODEFILE /public/software/VASP/vasp.5.4.4/bin/vasp_std
+echo "Your JOB VASP has finished. Elapsed time: $ETIME" >/public/home/apclab/CommonShared/finshjob.log
+#echo "Your JOB $JOB has finished. Elapsed time: $ETIME"  | mail -v -s "JOB fininshed" 11628034@zju.edu.cn 
+rsh node1 sh /public/home/apclab/nxu/finshjob.sh || ssh node1 sh /public/home/apclab/nxu/finshjob.sh
