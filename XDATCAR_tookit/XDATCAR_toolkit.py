@@ -82,12 +82,20 @@ class XDATCAR(Energy_Temp):
         for index,line in enumerate(self.XDATCAR):
             if "Direct" in line:
                 self.frames+=1
-            elif title in line:
-                self.NPT=True
+            # elif title in line:
+            #     self.NPT=True
+        self.XDATCAR.seek(0)
+        self.lattice_read()
+        self.XDATCAR.readline()
+        for i in range(self.total_atom):
+            self.XDATCAR.readline()
+
+        if "Direct configuration" not in self.XDATCAR.readline():
+        	self.NPT=True	
         #self.frames=len(['Direct' for line in self.XDATCAR if "Direct" in line])
         print('Total frames {0}, NpT is {1}'.format(self.frames,self.NPT))
-        assert len(self.energy)==self.frames, \
-            'Number of XDATCAR frames does not equal to that of Energy terms in OSZICAR'   
+        # assert len(self.energy)==self.frames, \
+        #     'Number of XDATCAR frames does not equal to that of Energy terms in OSZICAR'   
         self.XDATCAR.seek(0)
         self.lowrange=0;self.uprange=self.frames-1
         if self.NPT == False: self.lattice_read()
@@ -176,9 +184,9 @@ class XDATCAR(Energy_Temp):
         #self.cartesian_position*=self.scaling_factor
         return self.cartesian_position
 
-    def writepdb(self):
+    def writepdb(self,pdb_frame):
         tobewriten=[]
-        tobewriten.append("MODEL         %r" %(self.current_frame))
+        tobewriten.append("MODEL         %r" %(pdb_frame))
         tobewriten.append("REMARK   Converted from XDATCAR file")
         tobewriten.append("REMARK   Converted using VASPKIT")
         tobewriten.append('CRYST1{0:9.3f}{1:9.3f}{2:9.3f}{3:7.2f}{4:7.2f}{5:7.2f}' .format(self._lattice1,\
@@ -295,7 +303,19 @@ if __name__ == "__main__":
                       dest="index", default=-1,  
                       help="choose which atom to center whole molecule!") 
 
+    parser.add_option("--interval", 
+                      dest="interval", default=1,  
+                      help="extract frames interval!") 
+
     (options,args) = parser.parse_args()
+    try:
+        float(options.timestep)
+        int(options.index)
+        _interval=int(options.interval)
+        int(options.begin)
+        if options.end != 'false': int(options.end)
+    except:
+        raise ValueError('wrong arguments')
     XDATCAR_inst=XDATCAR()
     XDATCAR_iter=iter(XDATCAR_inst)
     if options.format_trans:
@@ -310,22 +330,31 @@ if __name__ == "__main__":
         XDATCAR_inst('t>= %r' %(int(options.begin)))
     else:
         XDATCAR_inst('t>= %r and t <= %r' %(int(options.begin),int(options.end))) # frame 10~300  corresponding to 20~600fs
+    if _interval >(XDATCAR_inst.uprange-XDATCAR_inst.lowrange):
+        raise SystemError('Trajectory interval exceed selected time range!')
+    elif _interval<=1:
+        _interval=1
+    count=0 
+    current_pdb=1  
     for i in range(XDATCAR_inst.uprange+1): 
         if (i>=XDATCAR_inst.lowrange):
             cartesian_position=XDATCAR_iter.next()
-            if options.format_trans == True: 
-                if options.periodic == True: 
-                    if i == XDATCAR_inst.lowrange:
-                        real_atomic_cartesian=deepcopy(cartesian_position)
-                        if int(options.index) != -1:
-                            real_atomic_cartesian=XDATCAR_inst.reset_cartesian(real_atomic_cartesian,int(options.index)-1)
-                        XDATCAR_inst.cartesian_position=real_atomic_cartesian
-                        prev_atomic_cartesian=deepcopy(cartesian_position)
-                    else:
-                        prev_atomic_cartesian,diffs=XDATCAR_inst.unswrapPBC(prev_atomic_cartesian)
-                        real_atomic_cartesian+=diffs
-                        XDATCAR_inst.cartesian_position=real_atomic_cartesian              
-                XDATCAR_inst.writepdb()
+            if count % _interval == 0:
+                if options.format_trans == True: 
+                    if options.periodic == True: 
+                        if i == XDATCAR_inst.lowrange:
+                            real_atomic_cartesian=deepcopy(cartesian_position)
+                            if int(options.index) != -1:
+                                real_atomic_cartesian=XDATCAR_inst.reset_cartesian(real_atomic_cartesian,int(options.index)-1)
+                            XDATCAR_inst.cartesian_position=real_atomic_cartesian
+                            prev_atomic_cartesian=deepcopy(cartesian_position)
+                        else:
+                            prev_atomic_cartesian,diffs=XDATCAR_inst.unswrapPBC(prev_atomic_cartesian)
+                            real_atomic_cartesian+=diffs
+                            XDATCAR_inst.cartesian_position=real_atomic_cartesian              
+                    XDATCAR_inst.writepdb(current_pdb)
+                    current_pdb+=1
+            count+=1
         else:
             XDATCAR_iter.skiplines_()
 
@@ -337,7 +366,7 @@ if __name__ == "__main__":
     print('Selected time-range:{0}~{1}fs'.format((XDATCAR_inst.lowrange)*timestep,\
                         (XDATCAR_inst.uprange)*timestep))
     XDATCAR_inst.XDATCAR.close()
-
+    print('Timestep for new PDB trajectory is :{0}fs'.format(timestep*_interval))  
     lwd = 0.2  # Control width of line
     dpi=300          # figure_resolution
     figsize=(5,4)   #figure_inches
