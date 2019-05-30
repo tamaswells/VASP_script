@@ -60,7 +60,7 @@ class XDATCAR(Energy_Temp):
         self.beta=0.0
         self.gamma=0.0
         self.current_frame=0
-        self.total_elements=[]
+        
         self._lattice1=0.0
         self._lattice2=0.0
         self._lattice3=0.0
@@ -154,6 +154,7 @@ class XDATCAR(Energy_Temp):
             self.element_amount=[int(j) for j in self.XDATCAR.readline().split()]
         except ValueError:
             raise ValueError('VASP 5.x XDATCAR is needed!')
+        self.total_elements=[]
         for i in range(len(self.element_amount)):
             self.total_elements.extend([self.element_list[i]]*self.element_amount[i])
         #print(self.total_elements)
@@ -191,6 +192,7 @@ class XDATCAR(Energy_Temp):
         tobewriten.append("REMARK   Converted using VASPKIT")
         tobewriten.append('CRYST1{0:9.3f}{1:9.3f}{2:9.3f}{3:7.2f}{4:7.2f}{5:7.2f}' .format(self._lattice1,\
             self._lattice2,self._lattice3,self.alpha,self.beta,self.gamma))
+        #print(len(self.total_elements))
         for i in range(len(self.total_elements)):
             tobewriten.append('%4s%7d%4s%5s%6d%4s%8.3f%8.3f%8.3f%6.2f%6.2f%12s' \
                 %("ATOM",i+1,self.total_elements[i],"MOL",1,'    ',self.cartesian_position[i][0],\
