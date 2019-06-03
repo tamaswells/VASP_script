@@ -110,9 +110,9 @@ def extract(super_x,super_y,selected_atom):
     s2=s1[s1[:,0]==0]
     s2[:,0]=1.0
     s3=s1[s1[:,1]==0]
-    s3[:,1]=1.0
-    point=[1.0,1.0,s1[np.where((s1[:,0]==0) & (s1[:,1]==0))][0][-2],\
-    s1[np.where((s1[:,0]==0) & (s1[:,1]==0))][0][-1]]        
+    s3[:,1]=1.0  
+    point=[1.0,1.0,s1[np.where((abs(s1[:,0])<=1E-4) & (abs(s1[:,1])<=1E-4))][0][-2],\
+    s1[np.where((abs(s1[:,0])<=1E-4) & (abs(s1[:,1])<=1E-4))][0][-1]]        
     all_new.extend(s2.tolist()) 
     all_new.extend(s3.tolist()) 
     all_new.append(point)           
